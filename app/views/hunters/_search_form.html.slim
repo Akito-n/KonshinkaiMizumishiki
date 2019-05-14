@@ -1,0 +1,22 @@
+.search-form.hide
+  =search_form_for search, url:(hunters_path), class: 'field is-grouped' do |f|
+    p.control =f.search_field :name_cont, class: 'input', placeholder: '名前検索'
+    p.control=f.select :type_name_eq, Type.names.map{ |key, val| [Type.names_i18n[key], val] },{include_blank: '全系統'}, class:'select control'
+    .is-grouped
+      label.label Power
+      span.control.is-6 =f.number_field :power_gteq, class: "input", placeholder: "下限"
+      span.control.is-6 =f.number_field :power_lteq, class: "input", placeholder: "上限"
+    .is-grouped
+      label.label Speed
+      span.control.is-6 =f.number_field :speed_gteq, class: "input", placeholder: "下限"
+      span.control.is-6 =f.number_field :speed_lteq, class: "input", placeholder: "上限"
+    .is-grouped
+      label.label Interigence
+      span.control.is-6 =f.number_field :interigence_gteq, class: "input", placeholder: "下限"
+      span.control.is-6 =f.number_field :interigence_lteq, class: "input", placeholder: "上限"
+    .is-grouped
+      label.label Technique
+      span.control.is-6 =f.number_field :technique_gteq, class: "input", placeholder: "下限"
+      span.control.is-6 =f.number_field :technique_lteq, class: "input", placeholder: "上限"
+    .is-grouped
+      p.control =f.submit '検索', class:"button is-primary search-btn"

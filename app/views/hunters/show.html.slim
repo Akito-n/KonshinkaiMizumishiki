@@ -1,0 +1,31 @@
+.content
+  .columns
+    .column.margin-area
+  .colmuns
+    .column
+      =link_to "戻る", new_type_path, class: "button"
+    .column.is-6
+  .columns
+    .column
+      h1 #{@hunter.name} さんのステータス
+    .column
+      img src="/assets/images/#{@hunter.type.name}.png"
+  .columns
+    .column
+      nav.level
+        .level-item.has-text-centered
+          div
+            p.heading Powor
+            p.title = @hunter.power
+        .level-item.has-text-centered
+          div
+            p.heading Speed
+            p.title = @hunter.speed
+        .level-item.has-text-centered
+          div
+            p.heading Interigence
+            p.title = @hunter.interigence
+        .level-item.has-text-centered
+          div
+            p.heading Technique
+            p.title = @hunter.technique

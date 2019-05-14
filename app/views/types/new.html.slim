@@ -1,0 +1,36 @@
+.content
+  .columns
+    .column.is-half.is-offset-one-quarter
+      h1
+        | 裏ハンター試験
+      p
+        | 系統推理げーむ
+  .columns
+    .column.is-half
+      = form_with model: @hunter, url: types_path, local: true do |f|
+        .field
+          label =f.label :name, '名前'
+          .control
+            =f.text_field :name, placeholder: "", class: 'input'
+        .field
+          label =f.label :power, '腕力'
+          .control
+            =f.number_field :power, in: 0.0..150.0, step: 10.0, value: 100, class: 'input'
+        .field
+          label =f.label :speed, '速さ'
+          .control
+            =f.number_field :speed, in: 0.0..150.0, step: 10.0, value: 100, class: 'input'
+        .field
+          label =f.label :interigence, '知能'
+          .control
+            =f.number_field :interigence, in: 0.0..150.0, step: 10.0, value: 100, class: 'input'
+        .field
+          label =f.label :technique, 'テクニック'
+          .control
+            =f.number_field :technique, in: 0.0..150.0, step: 10.0, value: 100, class: 'input'
+        .field
+          =f.submit class: 'button is-link'
+      =link_to "ハンター名簿", hunters_path, class: 'button is-info btn-nomal'
+    .column.is-half
+      img src="/assets/images/top_mizumi.jpg" class="top-img"
+      

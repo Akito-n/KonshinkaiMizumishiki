@@ -1,0 +1,31 @@
+.content
+  .columns
+    .column.margin-area
+      =link_to "戻る", new_type_path, class: "button is-primary"
+      button#search-opener.is-info.button.ml-2 検索ボタン
+  .columns
+    .column
+      =render 'search_form', {search: @search}
+  .colmuns
+    .column
+      table.table.is-striped
+        thead
+          tr
+            th 名前
+            th 系統
+            th Power
+            th Speed
+            th Interigence
+            th Technique
+        tbody
+          - @hunters.each do |hunter|
+            tr
+              td =hunter.name
+              td =hunter.type.name_i18n
+              td =hunter.power
+              td =hunter.speed
+              td =hunter.interigence
+              td =hunter.technique
+  .columns
+    .column.is-3
+      =paginate @hunters

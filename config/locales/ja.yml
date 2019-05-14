@@ -1,0 +1,11 @@
+ja:
+  enums:
+    type:
+      name:
+        tokushitsu: 特質系
+        kyouka: 強化系
+        hennka: 変化型
+        sousa: 操作系
+        housyutu: 放出系
+        gugennka: 具現化
+        other: 一般人
