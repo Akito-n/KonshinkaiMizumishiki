@@ -9,7 +9,7 @@
     .column
       h1 #{@hunter.name} さんのステータス
     .column
-      img src="/assets/images/#{@hunter.type.name}.png"
+      = image_tag  "/assets/images/#{@hunter.type.name}.png"
   .columns
     .column
       nav.level
